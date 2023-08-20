@@ -1,6 +1,7 @@
 ## Microsoft Learn AI 技能挑战赛
 ### 项目名称 : 基于LangChain 和 Azure OpenaAI的读书知识问答DEMO
 ### 参赛人员： [@zR](https://github.com/zRzRzRzRzRzRzR), [@Wenwei Lin](https://github.com/wenwei-lin)
+### [Live Demo](https://wonderful-sea-0b60a9b00.3.azurestaticapps.net/)
 
 ### 项目简介
 本项目的推理端基于开源框架[Langchain-ChatChat](https://github.com/chatchat-space/Langchain-Chatchat)，并做出了如下的改进
