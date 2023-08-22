@@ -16,7 +16,7 @@ export default function Home() {
   const [loading, setLoading] = useState(false);
   const [messages, setMessages] = useState([
     {
-      "content": "你好，有什么可以帮你？",
+      "content": "Hello, how can I help you?",
       "role": "assistant"
     }
   ]);
@@ -146,14 +146,14 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>读书助理</title>
+        <title>Reading Copilot</title>
         <meta name="description" content="LangChain documentation chatbot" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className={styles.topnav}>
         <div className={styles.navlogo}>
-          <a href="/">读书助理</a>
+          <a href="/">Reading Copilot</a>
         </div>
         <div className={styles.navlinks}>
           {/** TODO: upload file */}
@@ -181,7 +181,7 @@ export default function Home() {
                           aria-controls="panel1a-content"
                           id="panel1a-header"
                         >
-                          <h3>相关文档</h3>
+                          <h3>Related Documents</h3>
                         </AccordionSummary>
                         <AccordionDetails>
                           <div className={styles.docslist}>
