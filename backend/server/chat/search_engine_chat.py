@@ -57,18 +57,14 @@ def lookup_search_engine(
     return docs
 
 
-def search_engine_chat(query: str = Body(..., description="用户输入", examples=["你好"]),
-                       search_engine_name: str = Body(..., description="搜索引擎名称", examples=["duckduckgo"]),
-                       top_k: int = Body(SEARCH_ENGINE_TOP_K, description="检索结果数量"),
+def search_engine_chat(query: str = Body(..., description="user's input", examples=["hello"]),
+                       search_engine_name: str = Body(..., description="search_engine", examples=["duckduckgo"]),
+                       top_k: int = Body(SEARCH_ENGINE_TOP_K, description="number of search"),
                        history: List[History] = Body([],
-                                                     description="历史对话",
-                                                     examples=[[
-                                                         {"role": "user",
-                                                          "content": "我们来玩成语接龙，我先来，生龙活虎"},
-                                                         {"role": "assistant",
-                                                          "content": "虎头虎脑"}]]
+                                                     description="history",
+                                                     examples=[]
                                                      ),
-                       stream: bool = Body(False, description="流式输出"),
+                       stream: bool = Body(False, description="stream"),
                        ):
     if search_engine_name not in SEARCH_ENGINES.keys():
         return BaseResponse(code=404, msg=f"未支持搜索引擎 {search_engine_name}")
@@ -103,7 +99,7 @@ def search_engine_chat(query: str = Body(..., description="用户输入", exampl
         )
 
         source_documents = [
-            f"""出处 [{inum + 1}] [{doc.metadata["source"]}]({doc.metadata["source"]}) \n\n{doc.page_content}\n\n"""
+            f"""source: [{inum + 1}] [{doc.metadata["source"]}]({doc.metadata["source"]}) \n\n{doc.page_content}\n\n"""
             for inum, doc in enumerate(docs)
         ]
 
