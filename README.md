@@ -1,32 +1,35 @@
-## Microsoft Learn AI 技能挑战赛
-### 项目名称 : 基于LangChain 和 Azure OpenaAI的读书知识问答DEMO
-### 参赛人员： [@zR](https://github.com/zRzRzRzRzRzRzR), [@Wenwei Lin](https://github.com/wenwei-lin)
+## Reading Copilot — Microsoft Learn AI Skills Challenge Project
 
-### 项目简介
-本项目的推理端基于开源框架[Langchain-ChatChat](https://github.com/chatchat-space/Langchain-Chatchat)，并做出了如下的改进
-+ 使用Azure OpenAI Embed和Azure OpenAI Chat模型进行问答。
-+ 添加了Langchian的总结功能，允许一次Embed更多相关知识库，并进行总结后再次回答，大大提升准确率。
-+ 使用向量缓存，减少重复Embed的损失。
+### [Live Demo](https://wonderful-sea-0b60a9b00.3.azurestaticapps.net/)
 
-本项目的前端基于开源项目[LangChain Chat - Next.js](https://github.com/zahidkhawaja/langchain-chat-nextjs)，并做出如下改进：
-+ 连接自定义的推理端
-+ 在机器人回复中显示相关文档的索引
+Reading Copilot is an innovative and powerful tool designed to enhance your reading experience and knowledge acquisition. It combines cutting-edge technologies, including natural language processing and artificial intelligence, to provide users with an intelligent reading companion.
 
+### Team Members: [@zR](https://github.com/zRzRzRzRzRzRzR), [@Wenwei Lin](https://github.com/wenwei-lin)
 
-### 知识库内容
-当前，demo中的已经存放了两本书籍以及我们的一份阅读笔记。
+### Project Overview
+The inference end of this project is based on the open-source framework [Langchain-ChatChat](https://github.com/chatchat-space/Langchain-Chatchat) with the following improvements:
++ Utilizes Azure OpenAI Embed and Azure OpenAI Chat models for question-answering.
++ Adds Langchain's summarization feature, allowing for embedding more related knowledge repositories at once and summarizing before answering, significantly improving accuracy.
++ Utilizes vector caching to reduce the cost of repetitive embeddings.
+
+The frontend of this project is based on the open-source project [LangChain Chat - Next.js](https://github.com/zahidkhawaja/langchain-chat-nextjs) with the following enhancements:
++ Connects to a custom inference end.
++ Displays indexes of relevant documents in robot responses.
+
+### Knowledge Repository Contents
+Currently, the demo contains two books and our reading notes:
 + Good with Words.pdf
-+ 悠游小说林-_（意）安贝托·艾柯_-_z-lib.org_.txt
++ Six Walks in the Fictional Woods.txt
 + Bits of Note.csv
 
-我们将其命名为Books的知识库，用户可以通过输入问题，获取到对应的答案。
+We've named this knowledge repository "Books," and users can input questions to obtain corresponding answers.
 
-### Demo访问地址
-+ 我们已经将Demo 部署到了Azure Web App上，可以通过[这里](https://wonderful-sea-0b60a9b00.3.azurestaticapps.net/)访问我们的demo。
-+ 该Demo仅限展示使用，承载量很低。如果需要更好的体验，请自行部署。
+### Demo Access
++ We've deployed the demo on Azure Static Web App, and you can access it [here](https://wonderful-sea-0b60a9b00.3.azurestaticapps.net/).
++ Please note that this demo is for showcase purposes only and has low capacity. If you require a better experience, we recommend deploying it on your own.
 
-![](./imgs/book-copilot-demo.png)
+![Demo Screenshot](./imgs/book-copilot-demo.png)
 
-### 后续工作
-+ 在前端增加图书上传功能。目前，该框架已经支持及时的文件上传和更新，但是由于Azure OpenAI Embed模型的限制，上传模型可能导致前端网页延迟，目前仅支持后端上传文件并向量化。我们将在未来修复这个问题。
-+ 支持PDF在线阅读和高亮Embed结果。
+### Future Work
++ Add a book uploading feature to the frontend. Currently, the framework supports real-time file uploads and updates, but due to limitations with the Azure OpenAI Embed model, uploading models may cause frontend delays. Currently, only backend file uploads and vectorization are supported. We plan to address this issue in the future.
++ Support online PDF reading and highlight embedded results.
